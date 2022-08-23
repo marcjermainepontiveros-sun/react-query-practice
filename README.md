@@ -1,3 +1,80 @@
+# React Query Basics
+
+## Project Setup
+
+1. New react project using CRA
+
+```
+npx create-react-app react-query-basics
+```
+
+2. Set up an API endpoint that serves mock data for use in our application
+
+First, install `json-server`.
+
+```shell
+npm install json-server
+```
+
+Then, in the root directory, create `db.json` file.
+```db.json
+{
+    "superheroes": [
+        {
+            "id": 1,
+            "name": "Batman",
+            "alterEgo": "Bruce Wayne"
+        },
+        {
+            "id": 2,
+            "name": "Superman",
+            "alterEgo": "Clark Kent"
+        },
+        {
+            "id": 3,
+            "name": "Wonderwoman",
+            "alterEgo": "Princess Diana"
+        }
+    ]
+}
+```
+
+In the `package.json` folder, add the following under `"scripts"` field:
+```
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "serve-json": "json-server --watch db.json --port 4000" //add this
+  }
+```
+
+Test your API:
+
+```shell
+npm run serve-json
+```
+
+For deployments related to `json-server`, see this:
+```
+https://my-json-server.typicode.com/
+```
+
+3. Set up react router and a few routes in the application.
+
+Install `react-router-dom`:
+
+```shell
+npm install react-router-dom
+```
+
+4. Fetch data the traditional way using useEffect and useState
+
+## Documents
+
+- [ Fetching Data with useQuery ](docs/01.md)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
